@@ -16,7 +16,14 @@ public class NewMonoBehaviourScript : MonoBehaviour
    
     void Update()
     {
+        // movimiento horizontal
         moveInput = Input.GetAxisRaw("Horizontal");
         rb2D.linearVelocity = new Vector2(moveInput * speed, rb2D.linearVelocity.y);
+
+        if(moveInput != 0)
+        {
+            // Cambiar la dirección del sprite según el movimiento
+            transform.localScale = new Vector3(Mathf.Sign(moveInput), 1, 1);
+        }
     }
 }
