@@ -6,6 +6,11 @@ public class NewMonoBehaviourScript : MonoBehaviour
     public float speed = 5f;
     private Rigidbody2D rb2D;
     private float moveInput;
+    public float jumpForce = 4f;
+    private bool isGrounded;
+    public Transform groundCheck;
+    public float groundRadius = 0.1f;
+    public LayerMask groundLayer;
 
     
     void Start()
@@ -25,5 +30,17 @@ public class NewMonoBehaviourScript : MonoBehaviour
             // Cambiar la dirección del sprite según el movimiento
             transform.localScale = new Vector3(Mathf.Sign(moveInput), 1, 1);
         }
+
+            // salto
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            rb2D.linearVelocity = new Vector2(rb2D.linearVelocity.x, jumpForce);
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        // Comprobar si el jugador está en el suelo
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
     }
 }
