@@ -46,7 +46,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         // limitar el movimiento horizontal del jugador dentro de los límites de la pantalla
         rb2D.linearVelocity = new Vector2(moveInput * speed, rb2D.linearVelocity.y);
 
-        float clampedX = Mathf.Clamp(transform.position.x, -2.1f, 2f);
+        float clampedX = Mathf.Clamp(transform.position.x, -4f, 8f);
         transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);
         
     }
