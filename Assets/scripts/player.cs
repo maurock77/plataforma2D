@@ -43,11 +43,12 @@ public class NewMonoBehaviourScript : MonoBehaviour
         // Comprobar si el jugador está en el suelo
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
 
+/*
         // limitar el movimiento horizontal del jugador dentro de los límites de la pantalla
         rb2D.linearVelocity = new Vector2(moveInput * speed, rb2D.linearVelocity.y);
 
         float clampedX = Mathf.Clamp(transform.position.x, -4f, 8f);
-        transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);
+        transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);*/
         
     }
 
