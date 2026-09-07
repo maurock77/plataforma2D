@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class NewMonoBehaviourScript : MonoBehaviour
     public Transform groundCheck;
     public float groundRadius = 0.1f;
     public LayerMask groundLayer;
+    private int coins;
+    public TMP_Text textCoins;
 
     
     void Start()
@@ -58,6 +61,8 @@ public class NewMonoBehaviourScript : MonoBehaviour
         if (collision.transform.CompareTag("Coin"))
         {
             Destroy(collision.gameObject);
+            coins++;
+            textCoins.text = coins.ToString();
         }
         
     }
