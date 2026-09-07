@@ -52,6 +52,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         
     }
 
+    // Detectar colisiones con monedas (desaparecen al tocarlas)
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.CompareTag("Coin"))
